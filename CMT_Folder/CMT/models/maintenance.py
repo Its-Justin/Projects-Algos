@@ -53,7 +53,7 @@ class Maintenance:
         WHERE maintenances.id = %(id)s
         """
         maintenance_result = connectToMySQL(cls.db_schema).query_db(query, data)
-        if len(maintenance_result):
+        if len(maintenance_result) == 0:
             return []
         else:
             maintenance_list = []
